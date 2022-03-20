@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "husky": {
-    "hooks":{
-      "pre-commit":"echo teste"
+    "hooks": {
+      "pre-commit": "echo teste"
     }
   },
   "lint-staged": {
@@ -12,14 +12,12 @@
       "lint --fix"
     ]
   },
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint src --max-warnings=0"
   },
-
   "dependencies": {
     "next": "12.1.0",
     "react": "17.0.2",
