@@ -1,5 +1,5 @@
 export default function Home() {
-  const foo = 'blabla';
+  const bla = 'blabla';
 
   return <div>index</div>;
 }
