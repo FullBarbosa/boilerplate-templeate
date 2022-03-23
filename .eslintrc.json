@@ -2,14 +2,20 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true,
-        "jest" :true
+        "jest" :true,
+        "node": true
     },
     "settings":{
       "react":{
         "version":"detect"
+      },
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
       }
     },
+
     "extends": [
         "plugin:react/recommended",
         "airbnb",
@@ -29,12 +35,15 @@
         "react-hooks"
     ],
     "rules": {
-      // "no-unused-vars":"warn",
+      "no-unused-vars":"warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
-      "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }]
+      "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "no-console": "warn",
+      "react/jsx-props-no-spreading":"off"
     }
 }
