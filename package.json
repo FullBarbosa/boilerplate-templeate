@@ -8,19 +8,19 @@
     "start": "next start",
     "lint": "next lint src --max-warnings=0",
     "prepare": "husky install",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test-commit": "jest"
   },
-
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
-
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
-      "yarn test --findRelatedTests --bail"
+      "cross-env CI=true yarn test-commit --findRelatedTests --bail",
+      "git add"
     ]
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "@types/styled-components": "^5.1.24",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "babel-plugin-styled-components": "^2.0.6",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.0",
