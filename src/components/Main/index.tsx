@@ -1,3 +1,3 @@
 export default function Main() {
-  return <div>react avançado</div>;
+  return <h1>react avançado</h1>;
 }
