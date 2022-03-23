@@ -6,17 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint src --max-warnings=0",
+    "lint": "eslint --max-warnings=0",
     "prepare": "husky install",
     "test": "jest --watch",
     "test-commit": "jest"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push":"yarn test"
-    }
-  },
+
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
