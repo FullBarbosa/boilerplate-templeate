@@ -11,16 +11,15 @@
     "test": "jest --watch",
     "test-ci": "jest",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook",
-    "commit": "cz"
+    "build-storybook": "build-storybook -s ./public",
+    "commit": "cz",
+    "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
-
-  "husky" : {
-    "hooks" : {
-      "prepare-commit-msg" : " exec < /dev/tty && npx cz --hook || true "
-   }
- },
- 
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": " exec < /dev/tty && npx cz --hook || true "
+    }
+  },
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
@@ -68,6 +67,7 @@
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
     "lint-staged": "^12.3.7",
+    "plop": "^3.0.5",
     "prettier": "^2.6.0",
     "typescript": "^4.6.2"
   },

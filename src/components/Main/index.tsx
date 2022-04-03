@@ -1,9 +1,9 @@
 import * as S from './styles';
 
-export default function Main({
+export const Main = ({
   title = 'react avançado',
   description = 'Typescript, ReactJs, NextJs e Styled Components'
-}) {
+}) => {
   return (
     <S.Wrapper>
       <S.Logo
@@ -18,4 +18,4 @@ export default function Main({
       />
     </S.Wrapper>
   );
-}
+};
