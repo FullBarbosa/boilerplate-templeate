@@ -1,6 +1,6 @@
 {
-  "name": "boilerplate",
-  "version": "0.1.0",
+  "name": "next-template-boilerplate",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,13 @@
     "test": "jest --watch",
     "test-ci": "jest",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "commit": "cz"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
   },
   "lint-staged": {
     "src/**/*": [
@@ -21,6 +27,7 @@
     ]
   },
   "dependencies": {
+    "commitizen": "^4.2.4",
     "next": "12.1.0",
     "next-pwa": "^5.4.6",
     "react": "17.0.2",
@@ -47,6 +54,7 @@
     "babel-loader": "^8.2.4",
     "babel-plugin-styled-components": "^2.0.6",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.0",
@@ -61,5 +69,10 @@
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.0",
     "typescript": "^4.6.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
